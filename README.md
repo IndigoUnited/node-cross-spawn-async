@@ -1,4 +1,4 @@
-# cross-spawn [![Build Status](https://travis-ci.org/IndigoUnited/node-cross-spawn-async.svg?branch=master)](https://travis-ci.org/IndigoUnited/node-cross-spawn-async)
+# cross-spawn [![Build Status](https://travis-ci.org/IndigoUnited/node-cross-spawn-async.svg?branch=master)](https://travis-ci.org/IndigoUnited/node-cross-spawn-async) [![Build status](https://ci.appveyor.com/api/projects/status/9rglfmcmxuu5lbcq/branch/master?svg=true)](https://ci.appveyor.com/project/satazor/node-cross-spawn-async/branch/master)
 
 A cross platform solution to node's spawn.
 
