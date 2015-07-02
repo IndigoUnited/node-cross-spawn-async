@@ -1,10 +1,10 @@
 'use strict';
 
-var spawn = require('../../index');
+var spawn = require('../../');
 
 function buffered(command, args, options, callback) {
     var cp;
-    var data;
+    var data = null;
 
     if (typeof options === 'function') {
         callback = options;
@@ -17,9 +17,9 @@ function buffered(command, args, options, callback) {
     }
 
     cp = spawn(command, args, options);
-    data = '';
 
-    cp.stdout.on('data', function(buffer) {
+    cp.stdout && cp.stdout.on('data', function(buffer) {
+        data = data || '';
         data += buffer.toString();
     });
 
