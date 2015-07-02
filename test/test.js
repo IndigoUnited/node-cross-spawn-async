@@ -300,7 +300,8 @@ describe('cross-spawn', function () {
                 expect(err.message).to.not.contain('undefined');
                 expect(err.code).to.be('ENOENT');
                 expect(err.errno).to.be('ENOENT');
-                expect(err.syscall).to.be('spawn somecommandthatwillneverexist');
+                expect(err.syscall).to.contain('spawn');
+                expect(err.syscall).to.not.contain('undefined');
 
                 next();
             }, 1000);
