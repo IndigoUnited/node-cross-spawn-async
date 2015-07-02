@@ -1,4 +1,4 @@
-# cross-spawn [![Build Status](https://travis-ci.org/IndigoUnited/node-cross-spawn-async.svg?branch=master)](https://travis-ci.org/IndigoUnited/node-cross-spawn-async) [![Build status](https://ci.appveyor.com/api/projects/status/9rglfmcmxuu5lbcq/branch/master?svg=true)](https://ci.appveyor.com/project/satazor/node-cross-spawn-async/branch/master)
+# cross-spawn-async [![Build Status](https://travis-ci.org/IndigoUnited/node-cross-spawn-async.svg?branch=master)](https://travis-ci.org/IndigoUnited/node-cross-spawn-async) [![Build status](https://ci.appveyor.com/api/projects/status/9rglfmcmxuu5lbcq/branch/master?svg=true)](https://ci.appveyor.com/project/satazor/node-cross-spawn-async/branch/master)
 
 A cross platform solution to node's spawn.
 
@@ -17,7 +17,7 @@ Node has issues when using spawn on Windows:
 - It does not allow you to run `del` or `dir`
 - It does not properly escape arguments with spaces or special characters
 
-All these issues are handled correctly by `cross-spawn`.
+All these issues are handled correctly by `cross-spawn-async`.
 There are some known modules, such as [win-spawn](https://github.com/ForbesLindesay/win-spawn), that try to solve this but they are either broken or provide faulty escaping of shell arguments.
 
 
