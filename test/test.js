@@ -9,6 +9,16 @@ var spawn    = require('../');
 
 var isWin    = process.platform === 'win32';
 
+// Fix AppVeyor tests because Git bin folder is in PATH and it has a "echo" program there
+if (isWin) {
+    process.env.PATH = process.env.PATH
+    .split(path.delimiter)
+    .filter(function (entry) {
+        return path.normalize(entry).toLowerCase() !== path.normalize('C:/Program Files/Git/bin').toLowerCase();
+    })
+    .join(path.delimiter);
+}
+
 describe('cross-spawn', function () {
     it('should support shebang in executables (with /usr/bin/env)', function (next) {
         buffered(__dirname + '/fixtures/shebang', function (err, data, code) {
