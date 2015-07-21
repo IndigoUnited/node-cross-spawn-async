@@ -14,7 +14,7 @@ if (isWin) {
     process.env.PATH = process.env.PATH
     .split(path.delimiter)
     .filter(function (entry) {
-        return /\\git\\bin$/i.test(path.normalize(entry));
+        return !/\\git\\bin$/i.test(path.normalize(entry));
     })
     .join(path.delimiter);
 }
