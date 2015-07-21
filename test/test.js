@@ -38,7 +38,9 @@ describe('cross-spawn', function () {
         var nodejs = which.sync('node');
         var file = __dirname + '/fixtures/shebang_noenv';
 
-        fs.writeFileSync(file, '#!' + nodejs + '\n\nprocess.stdout.write(\'shebang works!\');');
+        fs.writeFileSync(file, '#!' + nodejs + '\n\nprocess.stdout.write(\'shebang works!\');', {
+            mode: parseInt('0777', 8)
+        });
 
         buffered(file, function (err, data, code) {
             var envPath;
