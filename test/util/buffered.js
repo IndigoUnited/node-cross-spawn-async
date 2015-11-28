@@ -18,14 +18,14 @@ function buffered(command, args, options, callback) {
 
     cp = spawn(command, args, options);
 
-    cp.stdout && cp.stdout.on('data', function(buffer) {
+    cp.stdout && cp.stdout.on('data', function (buffer) {
         data = data || '';
         data += buffer.toString();
     });
 
     cp.on('error', callback);
 
-    cp.on('close', function(code) {
+    cp.on('close', function (code) {
         callback(null, data, code);
     });
 }
