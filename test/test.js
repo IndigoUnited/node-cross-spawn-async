@@ -29,7 +29,10 @@ describe('cross-spawn', function () {
     });
 
     after(function () {
-        rimraf.sync(__dirname + '/tmp');
+        // Need to wrap this in a set timeout otherwise it won't work on WINDOWS properly
+        setTimeout(function () {
+            rimraf.sync(__dirname + '/tmp');
+        }, 100);
     });
 
     afterEach(function () {
@@ -38,14 +41,11 @@ describe('cross-spawn', function () {
 
     it('should support shebang in executables with /usr/bin/env', function (next) {
         buffered(__dirname + '/fixtures/shebang', function (err, data, code) {
-            var envPath;
-
             expect(err).to.not.be.ok();
             expect(code).to.be(0);
             expect(data).to.equal('shebang works!');
 
             // Test if the actual shebang file is resolved against the PATH
-            envPath = process.env.PATH;
             process.env.PATH = path.normalize(__dirname + '/fixtures/') + path.delimiter + process.env.PATH;
 
             buffered('shebang', function (err, data, code) {
@@ -67,14 +67,11 @@ describe('cross-spawn', function () {
         });
 
         buffered(file, function (err, data, code) {
-            var envPath;
-
             expect(err).to.not.be.ok();
             expect(code).to.be(0);
             expect(data).to.equal('shebang works!');
 
             // Test if the actual shebang file is resolved against the PATH
-            envPath = process.env.PATH;
             process.env.PATH = path.normalize(__dirname + '/fixtures/') + path.delimiter + process.env.PATH;
 
             buffered('shebang_noenv', function (err, data, code) {
@@ -99,6 +96,28 @@ describe('cross-spawn', function () {
             expect(data).to.equal('shebang works!');
 
             next();
+        });
+    });
+
+    it('should support shebang in executables with extensions', function (next) {
+        fs.writeFileSync(__dirname + '/tmp/shebang.js', '#!/usr/bin/env node\n\nprocess.stdout.write(\'shebang with extension\');', { mode: parseInt('0777', 8) });
+        process.env.PATH = path.normalize(__dirname + '/tmp/') + path.delimiter + process.env.PATH;
+
+        buffered(__dirname + '/tmp/shebang.js', function (err, data, code) {
+            expect(err).to.not.be.ok();
+            expect(code).to.be(0);
+            expect(data).to.equal('shebang with extension');
+
+            // Test if the actual shebang file is resolved against the PATH
+            process.env.PATH = path.normalize(__dirname + '/fixtures/') + path.delimiter + process.env.PATH;
+
+            buffered('shebang.js', function (err, data, code) {
+                expect(err).to.not.be.ok();
+                expect(code).to.be(0);
+                expect(data).to.equal('shebang with extension');
+
+                next();
+            })
         });
     });
 
