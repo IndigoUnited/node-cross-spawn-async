@@ -2,6 +2,7 @@
 
 var path     = require('path');
 var fs       = require('fs');
+var cp       = require('child_process');
 var which    = require('which');
 var rimraf   = require('rimraf');
 var mkdirp   = require('mkdirp');
@@ -29,10 +30,10 @@ describe('cross-spawn-async', function () {
     });
 
     after(function (next) {
-        // Need to wrap this in a set timeout otherwise it won't work on WINDOWS properly
-        setTimeout(function () {
-            rimraf(__dirname + '/tmp', next);
-        }, 100);
+        rimraf(__dirname + '/tmp', function (err) {
+            // Ignore ENOTEMPTY on windows.. RIMRAF was giving problems
+            next(err && err.code === 'ENOTEMPTY' ? null : err);
+        });
     });
 
     afterEach(function () {
