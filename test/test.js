@@ -2,7 +2,6 @@
 
 var path     = require('path');
 var fs       = require('fs');
-var cp       = require('child_process');
 var which    = require('which');
 var rimraf   = require('rimraf');
 var mkdirp   = require('mkdirp');

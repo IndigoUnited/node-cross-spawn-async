@@ -2,3 +2,4 @@ node_modules/
 npm-debug.*
 test/fixtures/(*
 test/fixtures/shebang_noenv
+test/tmp
