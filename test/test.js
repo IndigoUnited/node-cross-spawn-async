@@ -28,10 +28,10 @@ describe('cross-spawn-async', function () {
         mkdirp.sync(__dirname + '/tmp');
     });
 
-    after(function () {
+    after(function (next) {
         // Need to wrap this in a set timeout otherwise it won't work on WINDOWS properly
         setTimeout(function () {
-            rimraf.sync(__dirname + '/tmp');
+            rimraf(__dirname + '/tmp', next);
         }, 100);
     });
 
