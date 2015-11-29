@@ -21,7 +21,7 @@ if (isWin) {
     .join(path.delimiter);
 }
 
-describe('cross-spawn', function () {
+describe('cross-spawn-async', function () {
     var originalPath = process.env.PATH;
 
     before(function () {
@@ -117,7 +117,7 @@ describe('cross-spawn', function () {
                 expect(data).to.equal('shebang with extension');
 
                 next();
-            })
+            });
         });
     });
 
