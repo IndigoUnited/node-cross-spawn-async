@@ -2,13 +2,13 @@
 
 [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Build status][appveyor-image]][appveyor-url] [![Dependency status][david-dm-image]][david-dm-url] [![Dev Dependency status][david-dm-dev-image]][david-dm-dev-url]
 
-[npm-url]: https://npmjs.org/package/cross-spawn
-[downloads-image]: http://img.shields.io/npm/dm/cross-spawn.svg
-[npm-image]: http://img.shields.io/npm/v/cross-spawn.svg
-[travis-url]: https://travis-ci.org/IndigoUnited/node-cross-spawn
-[travis-image]: http://img.shields.io/travis/IndigoUnited/node-cross-spawn.svg
-[appveyor-image]:https://ci.appveyor.com/api/projects/status/ckt1qfvke6mc6pe5?svg=true
-[appveyor-url]:	https://img.shields.io/appveyor/ci/IndigoUnited/node-cross-spawn-async.svg
+[npm-url]:https://npmjs.org/package/cross-spawn
+[downloads-image]:http://img.shields.io/npm/dm/cross-spawn.svg
+[npm-image]:http://img.shields.io/npm/v/cross-spawn.svg
+[travis-url]:https://travis-ci.org/IndigoUnited/node-cross-spawn
+[travis-image]:http://img.shields.io/travis/IndigoUnited/node-cross-spawn.svg
+[appveyor-url]:https://ci.appveyor.com/project/satazor/node-cross-spawn-async
+[appveyor-image]:https://img.shields.io/appveyor/ci/IndigoUnited/node-cross-spawn-async.svg
 [david-dm-url]:https://david-dm.org/IndigoUnited/node-cross-spawn
 [david-dm-image]:https://img.shields.io/david/IndigoUnited/node-cross-spawn.svg
 [david-dm-dev-url]:https://david-dm.org/IndigoUnited/node-cross-spawn#info=devDependencies
