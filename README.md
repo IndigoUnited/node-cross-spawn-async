@@ -6,7 +6,7 @@
 [downloads-image]:http://img.shields.io/npm/dm/cross-spawn-async.svg
 [npm-image]:http://img.shields.io/npm/v/cross-spawn-async.svg
 [travis-url]:https://travis-ci.org/IndigoUnited/node-cross-spawn-async
-[travis-image]:http://img.shields.io/travis/IndigoUnited/node-cross-spawn-async.svg
+[travis-image]:http://img.shields.io/travis/IndigoUnited/node-cross-spawn-async/master.svg
 [appveyor-url]:https://ci.appveyor.com/project/satazor/node-cross-spawn-async
 [appveyor-image]:https://img.shields.io/appveyor/ci/satazor/node-cross-spawn-async.svg
 [david-dm-url]:https://david-dm.org/IndigoUnited/node-cross-spawn-async
