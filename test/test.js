@@ -449,4 +449,10 @@ describe('cross-spawn-async', function () {
             timeout = setTimeout(next, 1000);
         });
     });
+
+    it('should not quote arguments if not necessary', function () {
+        var parsed = spawn._parse('wmic', ['logicaldisk', 'where', 'DeviceID="Z:"', 'get', 'freeSpace,size']);
+
+        expect(parsed.args[2]).to.match(/ freeSpace\^,size"$/)
+    });
 });
