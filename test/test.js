@@ -154,6 +154,20 @@ describe('cross-spawn-async', function () {
         });
     });
 
+    it('should handle arguments with quotes', function (next) {
+        buffered('node', [
+            __dirname + '/fixtures/echo',
+            '"foo"',
+            'foo"bar"foo',
+        ], function (err, data, code) {
+            expect(err).to.not.be.ok();
+            expect(code).to.be(0);
+            expect(data).to.equal('"foo"\nfoo"bar"foo');
+
+            next();
+        });
+    });
+
     it('should handle empty arguments', function (next) {
         buffered('node', [
             __dirname + '/fixtures/echo',
