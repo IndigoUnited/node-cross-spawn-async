@@ -450,9 +450,11 @@ describe('cross-spawn-async', function () {
         });
     });
 
-    it('should not quote arguments if not necessary', function () {
-        var parsed = spawn._parse('wmic', ['logicaldisk', 'where', 'DeviceID="Z:"', 'get', 'freeSpace,size']);
+    if (isWin) {
+        it('should not quote arguments if not necessary', function () {
+            var parsed = spawn._parse('wmic', ['logicaldisk', 'where', 'DeviceID="Z:"', 'get', 'freeSpace,size']);
 
-        expect(parsed.args[2]).to.match(/ freeSpace\^,size"$/)
-    });
+            expect(parsed.args[2]).to.match(/ freeSpace\^,size"$/);
+        });
+    }
 });
