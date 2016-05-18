@@ -102,6 +102,21 @@ describe('cross-spawn-async', function () {
         });
     });
 
+    it('should support shebang in executables with relative path that starts with `..`', function (next) {
+        var executable = '..' + path.sep + path.basename(process.cwd()) + path.sep + path.relative(process.cwd(), __dirname + '/fixtures/shebang');
+
+        fs.writeFileSync(__dirname + '/tmp/shebang', '#!/usr/bin/env node\n\nprocess.stdout.write(\'yeah\');', { mode: parseInt('0777', 8) });
+        process.env.PATH = path.normalize(__dirname + '/tmp/') + path.delimiter + process.env.PATH;
+
+        buffered(executable, function (err, data, code) {
+            expect(err).to.not.be.ok();
+            expect(code).to.be(0);
+            expect(data).to.equal('shebang works!');
+
+            next();
+        });
+    });
+
     it('should support shebang in executables with extensions', function (next) {
         fs.writeFileSync(__dirname + '/tmp/shebang.js', '#!/usr/bin/env node\n\nprocess.stdout.write(\'shebang with extension\');', { mode: parseInt('0777', 8) });
         process.env.PATH = path.normalize(__dirname + '/tmp/') + path.delimiter + process.env.PATH;
