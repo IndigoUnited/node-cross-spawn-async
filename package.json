@@ -38,7 +38,6 @@
   "devDependencies": {
     "@satazor/eslint-config": "^2.3.0",
     "eslint": "^2.10.2",
-    "eslint-plugin-react": "^5.1.1",
     "expect.js": "^0.3.0",
     "glob": "^7.0.0",
     "mkdirp": "^0.5.1",
