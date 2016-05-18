@@ -31,7 +31,6 @@
   "author": "IndigoUnited <hello@indigounited.com> (http://indigounited.com)",
   "license": "MIT",
   "dependencies": {
-    "lodash.assign": "^4.0.9",
     "lru-cache": "^4.0.0",
     "which": "^1.2.8"
   },
