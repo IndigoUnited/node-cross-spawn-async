@@ -103,7 +103,7 @@ describe('cross-spawn-async', function () {
     });
 
     it('should support shebang in executables with relative path that starts with `..`', function (next) {
-        var executable = '..' + path.sep + path.basename(process.cwd()) + path.sep + path.relative(process.cwd(), __dirname + '/fixtures/shebang');
+        var executable = '../' + path.basename(process.cwd()) + '/' + path.relative(process.cwd(), __dirname + '/fixtures/shebang');
 
         fs.writeFileSync(__dirname + '/tmp/shebang', '#!/usr/bin/env node\n\nprocess.stdout.write(\'yeah\');', { mode: parseInt('0777', 8) });
         process.env.PATH = path.normalize(__dirname + '/tmp/') + path.delimiter + process.env.PATH;
