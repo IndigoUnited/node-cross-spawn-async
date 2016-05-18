@@ -4,7 +4,8 @@
   "description": "Cross platform child_process#spawn",
   "main": "index.js",
   "scripts": {
-    "test": "node test/prepare && mocha --bail test/test"
+    "test": "node test/prepare && mocha --bail test/test",
+    "lint": "eslint '{*.js,lib/**/*.js,test/**/*.js}'"
   },
   "bugs": {
     "url": "https://github.com/IndigoUnited/node-cross-spawn-async/issues/"
@@ -30,10 +31,14 @@
   "author": "IndigoUnited <hello@indigounited.com> (http://indigounited.com)",
   "license": "MIT",
   "dependencies": {
+    "lodash.assign": "^4.0.9",
     "lru-cache": "^4.0.0",
-    "which": "1.2.4"
+    "which": "^1.2.8"
   },
   "devDependencies": {
+    "@satazor/eslint-config": "^2.3.0",
+    "eslint": "^2.10.2",
+    "eslint-plugin-react": "^5.1.1",
     "expect.js": "^0.3.0",
     "glob": "^7.0.0",
     "mkdirp": "^0.5.1",
