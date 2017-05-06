@@ -11,7 +11,7 @@
 [appveyor-image]:https://img.shields.io/appveyor/ci/satazor/node-cross-spawn-async/master.svg
 [david-dm-url]:https://david-dm.org/IndigoUnited/node-cross-spawn-async
 [david-dm-image]:https://img.shields.io/david/IndigoUnited/node-cross-spawn-async.svg
-[david-dm-dev-url]:https://david-dm.org/IndigoUnited/node-cross-spawn-async#info=devDependencies
+[david-dm-dev-url]:https://david-dm.org/IndigoUnited/node-cross-spawn-async?type=dev
 [david-dm-dev-image]:https://img.shields.io/david/dev/IndigoUnited/node-cross-spawn-async.svg
 
 A cross platform solution to node's spawn.
